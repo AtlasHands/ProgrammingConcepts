@@ -1,0 +1,2 @@
+# Chapter 1 - C Basics
+In this chapter we will take a look into C using an online C compiler.  For all of the parts of this chapter use the online compiler at: [https://www.tutorialspoint.com/compile_c_online.php](https://www.tutorialspoint.com/compile_c_online.php) 

@@ -1,0 +1,5 @@
+[book]
+authors = ["Keefer Sands"]
+multilingual = false
+src = "src"
+title = "Concepts of Programming"
