@@ -72,7 +72,7 @@
         </script>
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
-            <ol class="chapter"><li class="affix"><a href="sum.html">Summary</a></li><li><a href="chapter_1.html"><strong aria-hidden="true">1.</strong> Chapter 1 - C Basics</a></li><li><ol class="section"><li><a href="variablesInC.html"><strong aria-hidden="true">1.1.</strong> Variables</a></li><li><a href="arraysInC.html"><strong aria-hidden="true">1.2.</strong> Arrays</a></li><li><a href="functionsInC.html" class="active"><strong aria-hidden="true">1.3.</strong> Functions</a></li></ol></li></ol>
+            <ol class="chapter"><li class="affix"><a href="sum.html">Summary</a></li><li><a href="chapter_1.html"><strong aria-hidden="true">1.</strong> Chapter 1 - C Basics</a></li><li><ol class="section"><li><a href="commentsInC.html"><strong aria-hidden="true">1.1.</strong> Comments</a></li><li><a href="variablesInC.html"><strong aria-hidden="true">1.2.</strong> Variables</a></li><li><a href="arraysInC.html"><strong aria-hidden="true">1.3.</strong> Arrays</a></li><li><a href="functionsInC.html" class="active"><strong aria-hidden="true">1.4.</strong> Functions</a></li></ol></li></ol>
         </nav>
 
         <div id="page-wrapper" class="page-wrapper">
@@ -180,7 +180,7 @@ int main()
     printf(&quot;First:%i\nSecond:%i\nThird:%i\nFourth:%i\nFifth:%i\n&quot;,operation1,operation2,operation3,operation4,operation5);
 }
 </code></pre>
-<p>Lets walk through the anatomy of a function. If you look up above you can see: int doOperation(int number){} the format that this follows is: <returnValue> <functionName>(<type> <parameterName>){<CodeToRun>}.<br />
+<p>Lets walk through the anatomy of a function. If you look up above you can see: int doOperation(int number){} the format that this follows is: <code>&lt;returnValue&gt; &lt;functionName&gt;(&lt;type&gt; &lt;parameterName&gt;){&lt;CodeToRun&gt;}</code>.<br />
 Reading this in plain english from left to right would explain as follows, We have a function that:</p>
 <ul>
 <li>Returns an integer</li>
@@ -196,12 +196,35 @@ Reading this in plain english from left to right would explain as follows, We ha
 <li><strong>Return</strong>: What gets passed back to the location where the function is called, must be specified at the front of the function. You'll see that at //secondExample we have operation2 being set equal to the function of doOperation(secondNumber), what we get back from the function is what gets returned from doOperation, which when you look at the function doOperation, we return operation, which is technically going to be (secondNumber + 5)*10)-23;</li>
 </ul>
 <a class="header" href="#incorrect-function-definitions" id="incorrect-function-definitions"><h1>Incorrect function definitions</h1></a>
-<pre><code class="language-C">    int doOperation(int number){return 1} //Ex1:correct
-    int doOperation(int number){} //Ex2: incorrect
-    int doOperation(number){return 1};//Ex3: incorrect
-    int doOperation(int){return 1};//Ex4: incorrect
-    doOperation(int number){return 1};//Ex5: incorrect
-    int (int number){return 1};//Ex6: incorrect
+<pre><code class="language-C">    //Ex1: correct, follows correct formatting, 
+    //has int as return value, returns an int
+    int doOperation(int number){return 1}; 
+    //Ex2: incorrect, lists int as a return value,
+    //doesn't return an int
+    int doOperation(int number){};
+    //Ex3: incorrect, improper declaration of number,
+    // it doesn't have a type but needs one since C is strongly typed
+    int doOperation(number){return 1};
+    //Ex4: incorrect, improper declaration of variable,
+    //lists a type but no name
+    int doOperation(int){return 1};
+    //Ex5: incorrect, doesn't list a return type,
+    // functions must list a return type, if you return 
+    //nothing you say your return type is void
+    doOperation(int number){return 1};
+    //Ex6: incorrect, lists return type but function does not have a name
+    int (int number){return 1};
+    //Ex7: correct, functions can have no variable passed to them,
+    // therefor it is correct
+    int doOperation(){return 1}; 
+    //Ex8: incorrect, we say that we are not 
+    //returning anything with void then return something.
+    void doOperation(){return 1};
+    //Ex9: correct, functions can have void return
+    // type and no argument variables
+    void doOperation(){}; 
+    //Ex10: correct has void return type, can have argument variables
+    void doOperation(int number){};
 </code></pre>
 
                     </main>

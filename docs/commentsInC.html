@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Arrays - Concepts of Programming</title>
+        <title>Comments - Concepts of Programming</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -72,7 +72,7 @@
         </script>
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
-            <ol class="chapter"><li class="affix"><a href="sum.html">Summary</a></li><li><a href="chapter_1.html"><strong aria-hidden="true">1.</strong> Chapter 1 - C Basics</a></li><li><ol class="section"><li><a href="commentsInC.html"><strong aria-hidden="true">1.1.</strong> Comments</a></li><li><a href="variablesInC.html"><strong aria-hidden="true">1.2.</strong> Variables</a></li><li><a href="arraysInC.html" class="active"><strong aria-hidden="true">1.3.</strong> Arrays</a></li><li><a href="functionsInC.html"><strong aria-hidden="true">1.4.</strong> Functions</a></li></ol></li></ol>
+            <ol class="chapter"><li class="affix"><a href="sum.html">Summary</a></li><li><a href="chapter_1.html"><strong aria-hidden="true">1.</strong> Chapter 1 - C Basics</a></li><li><ol class="section"><li><a href="commentsInC.html" class="active"><strong aria-hidden="true">1.1.</strong> Comments</a></li><li><a href="variablesInC.html"><strong aria-hidden="true">1.2.</strong> Variables</a></li><li><a href="arraysInC.html"><strong aria-hidden="true">1.3.</strong> Arrays</a></li><li><a href="functionsInC.html"><strong aria-hidden="true">1.4.</strong> Functions</a></li></ol></li></ol>
         </nav>
 
         <div id="page-wrapper" class="page-wrapper">
@@ -136,56 +136,41 @@
 
                 <div id="content" class="content">
                     <main>
-                        <a class="header" href="#arrays-in-c" id="arrays-in-c"><h1>Arrays In C</h1></a>
-<p>Arrays are variables that have the ability to hold multiple values.  An example of this would be if you want to store something like your favorite numbers. Lets say that you have more than one favorite number. You could say:</p>
-<pre><code class="language-C">int favoriteNumber1 = 12;
-int favoriteNumber2 = 77;
-int favoriteNumber3 = 80;
-</code></pre>
-<p>However if you want to get all of your favorite numbers you are then restricted because you need to know the name of your variable that you used for each favorite number, and if you have 10,000 favorite numbers you then need to call independently all of your favorite numbers by name if you want to look at your favorite numbers.</p>
-<p>A better way to do this is to store your favorite numbers in an array, making it easier to access all of your favorite numbers. An example of making an array with the same numbers as the last example is:</p>
-<pre><code class="language-C">int favoriteNumbers[] = {12,77,80};
-</code></pre>
-<p>Awesome! Now we can store all of our favorite numbers into one variable. I stated previously how this makes it easier to access your favorite numbers but how do we access our favorite numbers now?</p>
-<p>Notice how when favoriteNumbers was defined, it was followed by [] (favoriteNumbers[]). To access the values in favoriteNumbers we use a similar format. To get the first value in favoriteNumbers we call favoriteNumbers[0] - which would give us the value of 12.  Note: indexes for arrays start at 0 for most programming languages. So 0 will give you the first element, 1 will give you the second element and so on.</p>
-<p>To see this in action put this into the online C compiler:</p>
-<pre><code class="language-C">#include &lt;stdio.h&gt;
+                        <a class="header" href="#comments-in-c" id="comments-in-c"><h1>Comments in C</h1></a>
+<p>Comments are extremely important and extremely easy to convey.</p>
+<p>Comments do not run when the program itself runs, it just helps to document your code.</p>
+<p>Its helpful if other people look at your code or even for yourself in the future. Often when reviewing my own code I would be lost if I had not commented what the code was doing. Sometimes the solution you find for a problem may be very niche or strange, if you look back at it without commenting it may just become unknown code you're afraid to change in fear of breaking the total process.</p>
+<a class="header" href="#examples-of-comments-in-c" id="examples-of-comments-in-c"><h1>Examples of comments in C</h1></a>
+<pre><code class="language-C">    //This is a line comment!
+    /*This is a multi line comment!
+    You can keep going as long as its between the start and end tags
+    You can also use these tags to comment out code for testing!*/
+    /*: Start Tag
+    End Tag: */
+    //Example of code commented out
+    //int a = 10;
+    //int b = 20;
 
-int main()
-{
-    int favoriteNumbers[] = {12,77,88};
-    printf(&quot;%i&quot;,favoriteNumbers[0]);
-}
-</code></pre>
-<p>Try changing [0] to [1] and then [2] and then [3].</p>
-<p>You'll notice that when you try 3 the compiler will give you an error &quot;Segmentation fault&quot;. This just means that you tried to access an element that does not exist within the array. Since we did not have a 4th element in the array we cannot access a [3] index. Be careful when programming because a segmentation fault will cause you program to crash, ruining whatever you are trying to do with your program.</p>
-<p>So why is this beneficial? Well now that we don't need to know the actual name of the variable we can use a programming concept called a loop to go through all the values in favoriteNumbers, even if you have 10,000 favorite numbers.</p>
-<p>An example of a loop that goes through a complete array is below, we will talk about loops later in the book.</p>
-<pre><code class="language-C">#include &lt;stdio.h&gt;
+    /*
+    int a = 10;
+    int b = 20;
+    */
 
-int main()
-{
-    int favoriteNumbers[] = {12,77,88};
-    int lengthOfFavorityNumbers = sizeof(favoriteNumbers)/sizeof(int);
-    for(int x =0;x&lt;lengthOfFavorityNumbers;x++){
-        printf(&quot;%i &quot;,favoriteNumbers[x]);
-    }
-}
 </code></pre>
-<p>If you plug that into the compiler you will get each value in the favoriteNumbers array. The loop above basically tells variable x to keep adding to itself until you reach the length of the elements in the favorite numbers.</p>
+<p>This book will use comments frequently in code examples to convey ideas</p>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
                         
-                            <a rel="prev" href="variablesInC.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="chapter_1.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
                         
 
                         
-                            <a rel="next" href="functionsInC.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next" href="variablesInC.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
                         
@@ -197,13 +182,13 @@ int main()
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
                 
-                    <a href="variablesInC.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a href="chapter_1.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
                 
 
                 
-                    <a href="functionsInC.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a href="variablesInC.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
                 

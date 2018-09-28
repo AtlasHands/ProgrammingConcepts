@@ -48,7 +48,7 @@ int main()
 }
 ```  
   
-Lets walk through the anatomy of a function. If you look up above you can see: int doOperation(int number){} the format that this follows is: <returnValue> <functionName>\(<type> <parameterName>\){<CodeToRun>}.  
+Lets walk through the anatomy of a function. If you look up above you can see: int doOperation(int number){} the format that this follows is: `<returnValue> <functionName>(<type> <parameterName>){<CodeToRun>}`.  
 Reading this in plain english from left to right would explain as follows, We have a function that:
 * Returns an integer 
 * is called doOperation
@@ -65,10 +65,33 @@ Reading this in plain english from left to right would explain as follows, We ha
 # Incorrect function definitions
 
 ```C
-	int doOperation(int number){return 1} //Ex1:correct
-	int doOperation(int number){} //Ex2: incorrect
-	int doOperation(number){return 1};//Ex3: incorrect
-	int doOperation(int){return 1};//Ex4: incorrect
-	doOperation(int number){return 1};//Ex5: incorrect
-	int (int number){return 1};//Ex6: incorrect
-```
+    //Ex1: correct, follows correct formatting, 
+    //has int as return value, returns an int
+	int doOperation(int number){return 1}; 
+    //Ex2: incorrect, lists int as a return value,
+    //doesn't return an int
+	int doOperation(int number){};
+    //Ex3: incorrect, improper declaration of number,
+    // it doesn't have a type but needs one since C is strongly typed
+	int doOperation(number){return 1};
+    //Ex4: incorrect, improper declaration of variable,
+    //lists a type but no name
+	int doOperation(int){return 1};
+    //Ex5: incorrect, doesn't list a return type,
+    // functions must list a return type, if you return 
+    //nothing you say your return type is void
+	doOperation(int number){return 1};
+    //Ex6: incorrect, lists return type but function does not have a name
+	int (int number){return 1};
+    //Ex7: correct, functions can have no variable passed to them,
+    // therefor it is correct
+    int doOperation(){return 1}; 
+    //Ex8: incorrect, we say that we are not 
+    //returning anything with void then return something.
+    void doOperation(){return 1};
+    //Ex9: correct, functions can have void return
+    // type and no argument variables
+    void doOperation(){}; 
+    //Ex10: correct has void return type, can have argument variables
+    void doOperation(int number){};
+```  
