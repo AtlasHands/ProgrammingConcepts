@@ -143,8 +143,8 @@
 <a class="header" href="#chapter-1---c-basics" id="chapter-1---c-basics"><h1>Chapter 1 - C Basics</h1></a>
 <p>In this chapter we will take a look into C using an online C compiler.  For all of the parts of this chapter use the online compiler at: <a href="https://www.tutorialspoint.com/compile_c_online.php">https://www.tutorialspoint.com/compile_c_online.php</a> </p>
 <a class="header" href="#comments-in-c" id="comments-in-c"><h1>Comments in C</h1></a>
-<p>Comments are extremely important and extremely easy to convey.</p>
-<p>Comments do not run when the program itself runs, it just helps to document your code.</p>
+<p>Comments are extremely important and easy to convey.</p>
+<p>Comments do not run when the program itself runs, they just helps to document your code.</p>
 <p>Its helpful if other people look at your code or even for yourself in the future. Often when reviewing my own code I would be lost if I had not commented what the code was doing. Sometimes the solution you find for a problem may be very niche or strange, if you look back at it without commenting it may just become unknown code you're afraid to change in fear of breaking the total process.</p>
 <a class="header" href="#examples-of-comments-in-c" id="examples-of-comments-in-c"><h1>Examples of comments in C</h1></a>
 <pre><code class="language-C">    //This is a line comment!
@@ -313,25 +313,25 @@ Reading this in plain english from left to right would explain as follows, We ha
     //doesn't return an int
     int doOperation(int number){};
     //Ex3: incorrect, improper declaration of number,
-    // it doesn't have a type but needs one since C is strongly typed
+    //it doesn't have a type but needs one since C is strongly typed
     int doOperation(number){return 1};
     //Ex4: incorrect, improper declaration of variable,
     //lists a type but no name
     int doOperation(int){return 1};
     //Ex5: incorrect, doesn't list a return type,
-    // functions must list a return type, if you return 
+    //functions must list a return type, if you return 
     //nothing you say your return type is void
     doOperation(int number){return 1};
     //Ex6: incorrect, lists return type but function does not have a name
     int (int number){return 1};
     //Ex7: correct, functions can have no variable passed to them,
-    // therefor it is correct
+    //therefor it is correct
     int doOperation(){return 1}; 
     //Ex8: incorrect, we say that we are not 
     //returning anything with void then return something.
     void doOperation(){return 1};
     //Ex9: correct, functions can have void return
-    // type and no argument variables
+    //type and no argument variables
     void doOperation(){}; 
     //Ex10: correct has void return type, can have argument variables
     void doOperation(int number){};
