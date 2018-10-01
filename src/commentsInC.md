@@ -1,8 +1,8 @@
 # Comments in C
 Comments are extremely important and easy to convey.  
-  
-Comments do not run when the program itself runs, they just helps to document your code.  
-  
+
+Comments do not run when the program itself runs, they just help to document your code.  
+
 Its helpful if other people look at your code or even for yourself in the future. Often when reviewing my own code I would be lost if I had not commented what the code was doing. Sometimes the solution you find for a problem may be very niche or strange, if you look back at it without commenting it may just become unknown code you're afraid to change in fear of breaking the total process.
 
 # Examples of comments in C
